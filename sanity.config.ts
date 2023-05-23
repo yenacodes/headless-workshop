@@ -26,6 +26,7 @@ import ctaBanner from './sanity/schemas/objects/ctaBanner'
 import featuredItems from './sanity/schemas/objects/featuredItems'
 import featuredText from './sanity/schemas/objects/featuredText'
 import mainHero from './sanity/schemas/objects/mainHero'
+import mediaModule from './sanity/schemas/objects/mediaModule'
 import quote from './sanity/schemas/objects/quote'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE
@@ -47,6 +48,7 @@ export default defineConfig({
       footer,
       // Objects
       mainHero,
+      mediaModule,
       quote,
       featuredItems,
       cta,
