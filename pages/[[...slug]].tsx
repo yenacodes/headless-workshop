@@ -34,7 +34,9 @@ export default function ProjectSlugRoute(props: PageProps) {
 
   console.log(page)
   // TODO: Use buildComponent to render the components on the page
-  const Page = ({ page }) => <></>
+  const Page = ({ page }) => (
+    <>{page.sections.map((section) => buildComponent(section))}</>
+  )
 
   if (preview) {
     return (
