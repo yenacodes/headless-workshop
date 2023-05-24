@@ -18,6 +18,9 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       validation: (rule) => rule.required(),
+      options: {
+        slugify: (input) => (input !== '/' ? '/' : input.replace('/', '')),
+      },
     },
     {
       type: 'array',

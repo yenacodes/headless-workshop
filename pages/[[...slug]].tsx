@@ -64,7 +64,6 @@ export const getStaticProps: GetStaticProps<
 > = async (ctx) => {
   const { preview = false, previewData = {}, params = {} } = ctx
   const token = previewData.token
-
   const [page, navigation, footer] = await Promise.all([
     getPageBySlug({
       token,
@@ -103,7 +102,11 @@ export const getStaticPaths = async () => {
 
   return {
     // TODO: Map the paths return from Sanity into the correct shape that Next.js is expecting
-    paths: [],
+    paths: paths.map((path) => {
+      return {
+        params: { slug: path.replace('/', '').split('/') },
+      }
+    }),
     fallback: false,
   }
 }
